@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Test";
+}
+@model List<Team>
+<h1>Bowlers</h1>
+<table>
+    <thead>
+        <tr>Team ID</tr>
+        <tr>Team Name</tr>
+    </thead>
+    <tbody>
+        @foreach (var t in Model)
+        {
+            <tr>
+                <td>@t.TeamID</td>
+                <td>@t.TeamName</td>
+            </tr>
+        }
+    </tbody>
+</table>

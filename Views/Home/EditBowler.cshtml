@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Update Info";
+}
+@model Bowler
+<div class="text-center">
+    <h1 class="display-4">Update Bowler Info</h1>
+</div>
+<form method="post">
+    <label asp-for="BowlerFirstName" autofocus>FirstName:</label><input asp-for="BowlerFirstName" /><br />
+    <label asp-for="BowlerMiddleInit">Middle Initial:</label><input asp-for="BowlerMiddleInit" /><br />
+    <label asp-for="BowlerLastName">Last Name:</label><input asp-for="BowlerLastName" /><br />
+    <label asp-for="BowlerAddress">Address:</label><input asp-for="BowlerAddress" /><br />
+    <label asp-for="BowlerCity">City:</label><input asp-for="BowlerCity" /><br />
+    <label asp-for="BowlerState">State:</label><input asp-for="BowlerState" /><br />
+    <label asp-for="BowlerZip">Zip:</label><input asp-for="BowlerZip" /><br />
+    <label asp-for="BowlerPhoneNumber">Phone Number:</label><input asp-for="BowlerPhoneNumber" /><br /><br />
+    <label asp-for="TeamID">Team Name: </label>
+    <select asp-for="TeamID">
+        <option class="font-weight-light">Select a Team</option>
+
+        @foreach (Team mkList in ViewBag.Tea)
+        {
+            <option value="@mkList.TeamID ">@mkList.TeamName</option>
+        }
+    </select>
+    <input class="btn btn-primary btn-info" type="submit" value="Save" />
+</form>
